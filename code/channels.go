@@ -9,6 +9,11 @@
 // channel syntax <-
 // data flows in the direction of the arrow
 
+
+// By default sends and receives block until both the sender and receiver are ready. 
+// in this case, no other other synchronization required.
+// https://gobyexample.com/channels
+
 package code
 
 import "fmt"
