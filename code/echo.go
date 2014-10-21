@@ -10,7 +10,9 @@ const linstenAddr = "localhost:4000"
 
 // not concurrent. can only have one connection. 
 func Echo() {
-	l, err := net.Listen("tcp", listenAddr)
+	l, err := net.Listen("tcp", listenAddr) // the Listen function creates servers
+	// l is short for "listener"
+
 	if err != nil {
 		log.Fatal(err)
 	}
