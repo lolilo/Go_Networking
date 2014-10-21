@@ -1,7 +1,7 @@
 package main
 
-import "github.com/lilo/net-hello/code"
+import "github.com/lilo/networking/code"
 
 func main() {
-    code.Echo()
+    code.Goroutine()
 }

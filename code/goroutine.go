@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func goroutine() {
+func Goroutine() {
 	go say("let's go!", 3)
 	go say("ho!", 2)
 	go say("hey!", 1)
