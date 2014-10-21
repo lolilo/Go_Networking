@@ -2,7 +2,7 @@
 // when a socket comes in, say "Hello" 
 // then shut the socket down
 
-package code
+package main
 
 import (
 	"fmt"
