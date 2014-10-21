@@ -1,4 +1,4 @@
-package main
+package code
 
 import (
 	"io"
@@ -8,9 +8,8 @@ import (
 
 const linstenAddr = "localhost:4000"
 
-
 // not concurrent. can only have one connection. 
-func echo() {
+func Echo() {
 	l, err := net.Listen("tcp", listenAddr)
 	if err != nil {
 		log.Fatal(err)
