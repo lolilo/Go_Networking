@@ -11,8 +11,6 @@ import (
 )
 
 const listenAddr = "localhost:4000"
-
-// func main() {
 	
 func hello_net() {
 	l, err := net.Listen("tcp", listenAddr) // returns "l", a net listener

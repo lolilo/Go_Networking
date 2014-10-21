@@ -6,7 +6,7 @@ import (
 	"net"
 )
 
-const linstenAddr = "localhost:4000"
+// const listenAddr = "localhost:4000"
 
 // not concurrent. can only have one connection. 
 func Echo() {
