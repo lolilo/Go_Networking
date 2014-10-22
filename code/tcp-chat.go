@@ -40,20 +40,29 @@ func match(c io.ReadWriteCloser) {
 func chat(a, b io.ReadWriteCloser) {
 	fmt.Fprintln(a, "Found one! Say hi.")
 	fmt.Fprintln(b, "Found one! Say hi.")
+
+	// create an error channel
 	errc := make(chan error, 1) 
+
+	// launch two copy functions
 	go cp(a, b, errc) 
 	go cp(b, a, errc) 
 
 	// blocks until an error occurs
 	// connection breaks by user intentionally disconnecting or some network error
-	if err := <errc; err != nil {
-		log.Prinln(err)
+	if err := <- errc; err != nil {
+		log.Println(err) // print error to console
 	}
+
+	// shut down both connections
 	a.Close()
 	b.Close()
 }
 
+// define copy funcion cp
+// takes in read and write channels and an error channel
+// in "errc chan <- error", the arrow indicates that errc is a write-only channel
 func cp(w io.Writer, r io.Reader, errc chan <- error) {
-	_, err := io.Copy(w, r)
-	errc <- err
+	_, err := io.Copy(w, r) // copy from reader to writer and obtain error value "err"
+	errc <- err // send error value "err" to error channel
 }
