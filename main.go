@@ -1,6 +1,6 @@
 package main
 
-import "github.com/lilo/networking/code"
+import "github.com/lilo/tcp_networking/code"
 
 func main() {
     // code.Concurrent_echo()
